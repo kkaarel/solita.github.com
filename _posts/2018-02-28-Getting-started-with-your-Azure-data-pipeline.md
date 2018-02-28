@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Getting started with your Azure data pipeline
+
 author: kaarelkorvemaa
 excerpt: Getting started with your Azure data pipeline
 tags:
@@ -14,6 +15,7 @@ tags:
 ---
 
 
+
 Majority of data project limbo around text files. Companies have 10s of different software that they use.  Integrating all of the can be sometimes impossible and not so business oriented. That’s why exporting text files from different systems is always easier, than building a datahub. Self-service solutions make it very easy to import text files and visualise them. This can at one point mean that an individual in an organisation has X amount of excels and csv files that take a lot of space and became a problem. What was the file and is it up to date ?
 
 ### Data in  Azure
@@ -21,11 +23,14 @@ Storaging, analysing and loading them into Azure is a good option. Azure has sev
 
 Azure provides options like [ Azure Data Factor(ADF)](https://azure.microsoft.com/en-gb/services/data-factory/) and [PolyBase](https://docs.microsoft.com/en-us/sql/relational-databases/polybase/polybase-guide). Azure Data factor(ADF) is a data processing tool, for managing data pipelines. It is a fully managed ETL service in cloud. ADF can orchestrate data flows from on-premise and cloud sources, which makes it very flexible and easy to use, tool for moving data to and from ADL. It is not just for copying data into databases, you can schedule, manage, analyse, processes and monitor your data pipeline with it. As of most of the systems change, schemas and data models do that as well. ADF works well when nothing isn’t changed in the table side.
 
+
 On average text files that are > 1 GB that need to be load into ADW/SQL server, would be suggestively done with Polybase. PolyBase is a technology that connects external/internal data with database via t-sql language.
 
 Polybase and ADF loading time are different, for a 5 GB text file it varies from 20 -30 minutes. ADF has a “warming up time”, which means that the system needs some time to be fully available. With PolyBase you can make an insert and it will take around 3-5 minutes for the text file to be in ADW.
 
+
 ### Practicalities PolyBase
+
 
 Both ADF and Polybase are very sensitive with the data. Key thing to make sure before you start querying data:
 
